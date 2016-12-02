@@ -1,0 +1,24 @@
+{{% extends 'base.html' %}
+{% block content %}
+<header><h1>Pacientes</h1></header>
+	<center>
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<td><b>Fecha</b></td>
+				<td><b>Lugar</b></td>
+				<td><b>Personal</b></td>
+				<td><b>Hora</b></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ object.Fecha_evento }}</td>
+				<td>{{ object.Lugar_evento }}</td>
+				<td>{{ object.Personal_evento }}</td>
+				<td>{{ object.Hora_evento }}</td>
+			</tr>	
+		</tbody>
+	</table>
+		</center>
+{% endblock %}

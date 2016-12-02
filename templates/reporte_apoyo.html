@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<header><h1>Apoyo </h1></header>
+	<center>
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<td><b>Paciente beneficiado</b></td>
+				<td><b>Donacion monetaria</b></td>
+				<td><b>Donacion especie</b></td>
+				<td><b>Fecha de apoyo</b></td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for item in object_list %}
+			<tr>
+				<td>{{ item.Apoyo_Paciente }}</td>
+				<td>{{ item.Donacion_monetaria }}</td>
+				<td>{{ item.Donacion_especie }}</td>
+				<td>{{ item.Fecha_entrega }}</td>
+			</tr>	
+		{% endfor %}
+		</tbody>
+	</table>
+	</center>
+{% endblock %}

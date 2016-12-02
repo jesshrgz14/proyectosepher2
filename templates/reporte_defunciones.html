@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<header><h1>Defunciones</h1></header>
+	<center>
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<td><b>Paciente</b></td>
+				<td><b>Fecha</b></td>
+				<td><b>Apoyo</b></td>
+				<td><b>Nombre recipiente</b></td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for item in object_list %}
+			<tr>
+				<td>{{ item.Paciente }}</td>
+				<td>{{ item.Fecha_apoyo }}</td>
+				<td>{{ item.Apoyo }}</td>
+				<td>{{ item.Recipiente_nombre }}</td>
+			</tr>	
+		{% endfor %}
+		</tbody>
+	</table>
+	</center>
+{% endblock %}

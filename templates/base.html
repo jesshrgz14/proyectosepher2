@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+	<head>
+		<title>Fundación SEPHER</title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		  <link href="/static/css/thumbnail-gallery.css" rel="stylesheet">
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		
+		<script type="text/javascript">
+		$(function() {
+			$('#sandbox-container .input-group.date').datepicker({
+    maxViewMode: 2
+});
+		});
+		</script>
+
+	</head>
+		<div>
+			<header role="banner">
+				<div class="inner-wrapper">
+				<h1><center><img src="{% static 'img/logosepher.png' %}" width="20%" height="20%"></h1>
+				</div> 
+			</header>
+			<nav class="nav navbar" style="background-color:#F57F20" role="navigation">
+			<center>
+			<div class="inner-wrapper" >
+			<div class="container" >
+				<ul class="nav navbar-nav">
+					<li><a href="" style="color:white">Acerca de</a></li>
+					<li><a href="" style="color:white">Historia</a></li>
+					<li><a href="" style="color:white">Casos éxito</a></li>
+					<li role="presentation" class="dropdown">
+   						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span>
+    					</a>
+    					<ul class="dropdown-menu">
+      						<li><a href="/registro_paciente/">Registro Pacientes</a></li>
+				            <li><a href="/reporte_pacientes/">Reportes Pacientes</a></li>
+				            <li><a href="//">Something else here</a></li>
+    					</ul>
+  					</li>
+  					{% if user.is_authenticated %}
+					<p class="navbar-text navbar-right"><b>Signed in as </b><a href="#" class="navbar-link"> {{ user.username }}</a>
+					<a href="/salir/"><b>Logout</b></a>
+					</p>
+				{% else %}
+					<p class="navbar-text navbar-right"><b>Signed in as</b><a href="#" class="navbar-link"><b>None</b></a>
+					</p>
+				{% endif %}
+			</ul>
+				</ul>
+			</div>
+			</div>
+			</center>
+			</nav>
+		</div>
+		{% block content %}
+		{% endblock %}
+		<script src="{% static 'js/bootstrap.js' %}"></script>
+		<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+		
+		
+	</body>
+</html>

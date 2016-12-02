@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2><span style="margin-left:100px; font-family:'Lato',sans-serif; color:black; ">Edición</span></h2>
+<br>
+<center>
+<header>
+</header>
+
+
+<style>
+.has-error .form-control {
+	border-color: #42275E;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+</style>
+
+	<div class="container" >
+		<form class="form-horizontal" method="POST">
+			{% csrf_token %} 
+
+					<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Nombre del Paciente</label>
+		            <div class="col-md-6">
+		                <input class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="nombre" type={{ form.Paciente_nombre }}
+		            </div>
+			</div>
+			<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Apellidos del Paciente</label>
+		            <div class="col-md-6">
+		                <input class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="apellidos" type={{ form.Paciente_apellido }} 
+		            </div>
+			</div>
+
+			<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Fecha nacimiento</label>
+		            <div class="col-md-6">
+		            <div class="input-group date">
+		                 <input type= "text" class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="fecha" type={{ form.Paciente_fnacimiento }} <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span></div>
+		            </div>
+			</div>
+
+			<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Diagnóstico médico del paciente</label>
+		            <div class="col-md-6">
+		                <input class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="diagnóstico" type={{ form.Paciente_diagnostico }} 
+		            </div>
+			</div>
+			<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Padre o tutor del paciente</label>
+		            <div class="col-md-6">
+		                <input class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="lugar" type={{ form.Tutor_Padre }} 
+		            </div>
+			</div>
+			<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Contacto (Teléfono)</label>
+		            <div class="col-md-6">
+		                <input class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="teléono" type={{ form.Paciente_contacto }} 
+		            </div>
+			</div>
+
+			<div class="form-group has-error">
+		            <label for="inputEmail3-1121" class="col-md-4 control-label" style="color:black; ">Clínica</label>
+		            <div class="col-md-6">
+		                <input class="form-control  c-square c-theme" id="inputEmail3-1121" placeholder="clínica" type={{ form.Paciente_clinica }} 
+		            </div>
+			</div>
+			 <div class="form-group has-error">
+                <label class="col-md-4 control-label" style="color:black; ">Estado de salud del paciente</label>
+                <div class="col-md-6">
+                    <select class="form-control  c-square c-theme" type= {{ form.Estado_salud }}
+                        
+                     
+                    </select>
+                </div>
+            </div>
+
+			<br>
+				<button type="submit" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" style="background: #42275E; color: #ffffff;>Save </button>
+				<a href="/reporte_pacientes/">
+				<button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" style="background: #42275E; color: #ffffff;>Cancelar</button>
+				</a>
+		</form>
+	</div>
+
+
+{%endblock%}
+

@@ -1,0 +1,31 @@
+{{% extends 'base.html' %}
+{% block content %}
+<header><h1>Pacientes</h1></header>
+	<center>
+		<table class="table table-hover">
+		<thead>
+		<tr>
+					<td><b>Fecha reunión</b></td>
+				<td><b>Asistentes</b></td>
+				<td><b>Total donacioes monetarias</b></td>
+				<td><b>Valor donaciones especie</b></td>
+				<td><b>Clínica</b></td>
+				<td><b>Duración reunión</b></td>			
+				<td><b>Pacientes beneficiados </b></td>
+				<td><b>Observaciones</b></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ object.Fecha_reunion }}</td>
+				<td>{{ object.Asistentes }}</td>
+				<td>{{ object.Total_donacionesmon }}</td>
+				<td>{{ object.Valor_donacionesesp }}</td>
+				<td>{{ object.Duracion_reunion }}</td>
+				<td>{{ object.Pacientes_beneficiados }}</td>
+				<td>{{ object.Observaciones }}</td>
+			</tr>
+		</tbody>
+	</table>
+		</center>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<header><h1>Personal</h1></header>
+	<center>
+		<table class="table table-hover">
+		<thead>
+			<tr>
+				<td><b>Nombre</b></td>
+				<td><b>Apellidos</b></td>
+				<td><b>Funcion</b></td>
+				<td><b>Telefono</b></td>
+				<td><b>Correo</b></td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for item in object_list %}
+			<tr>
+				<td>{{ item.Personal_nombre }}</td>
+				<td>{{ item.Personal_apellidos }}</td>
+				<td>{{ item.Personal_tel }}</td>
+				<td>{{ item.Personal_correo }}</td>
+				<td><a class="btn btn-primary" href="/editar_personal/{{ item.pk }}" role="button">Editar</a>
+				<a class="btn btn-primary" href="/detalle_personal/{{ item.pk }}" role="button">Ver detalles</a></td>
+			</tr>	
+		{% endfor %}
+		</tbody>
+	</table>
+	</center>
+{% endblock %}
